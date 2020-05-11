@@ -66,7 +66,7 @@ const Alert = (props: AlertProps) => {
     const containerStyle: any = getContainerStyle(props.type);
     return (
         <Container style={containerStyle}>
-            <Icon><ErrorIcon/></Icon><Message>Error message</Message>
+            <Icon><ErrorIcon/></Icon><Message>{props.message}</Message>
         </Container>
     )
 }
@@ -75,7 +75,8 @@ export default Alert;
 
 interface AlertProps {
     size: AlertSize,
-    type: AlertType
+    type: AlertType,
+    message: string,
 }
 
 export enum AlertSize {
